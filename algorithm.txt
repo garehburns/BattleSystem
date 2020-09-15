@@ -1,0 +1,91 @@
+(Troubleshooting in report)
+
+Import random and os.path
+Define character variables (name, race, level, current HP, and potions) as characterData
+Define the game variables (damage, max HP, hit chance, however many points health potions heal)
+Define isDead as false so the character is seen as alive
+
+
+Define saveCharacter module from characterData:
+Open new file to write the first attribute [0] from characterData for the newly created character
+This will name the file after whatever the user names his/her character
+Close the file
+
+
+Define loadCharacter module from characterName:
+Opens new file to write the characterName inputted by the user to find if the text file exists
+If it does,it loads the character and reads it
+Close the file
+Then it takes the characterData from the loaded file and assigns the modifiers as they were for that character
+
+
+Define assignRaceModifiers module from race:
+If statement to define if human is picked to change the starting attributes to the modified attributes
+Elif statement to define if Elf is picked to “                                                                                                        “
+Elif statement to define if Dwarf is picked to “                                                                                                  “
+Elif statement to define if Hobbit is picked to “                                                                                                 “
+
+
+Define createCharacterMenu module:
+Made a fancy menu for the user to create the name for his/her character
+While True:
+Another fancy menu for the user to pick a race
+If and elif statements to assign the correct characterData to the player’s file for whichever race is selected
+Else statement in case a selection not given is selected
+Assign the characterData and race modifiers to the correct places for the correct race
+Assign the max HP
+And run the saveCharacter module
+
+
+Define startMenu:
+While True:
+Yet another fancy menu to pick whether you want to make a new character, load a character, or quit
+Create if statement for the create new character that runs createCharacterMenu() and battle() once finished
+Elif statement for the user to enter the name of his/her character’s name so the program can find it and import the values, attributes, and modifiers, then run battle()
+Else statement if the character you entered doesn’t exist
+Elif statement to quit the program if 3 is entered
+
+
+Define battle module:
+Make sure isDead is false so your character alive
+Load up the HP and potions for your character
+While loop to run if you’re still alive:
+For loop to make you fight through 4 orcs
+Added fancy menus to display “you encountered an orc” and your current HP and potions, and the orc’s HP
+Input for the user to pick to attack, use potion, or save and quit
+If statement for the random chance to hit the orc
+Else for if you miss, which you will…
+Elif for if you want to drink a potion, or 2, or 3
+Make sure you can’t go over the max HP provided, so you can’t get 40 HP when the max is 20.
+Elif for if the user wants to save and quit
+Else statement in case the user enters an invalid option
+Create orc’s hit chance
+If statement for if the orc hits you
+Else statement if he misses
+Final check to see if the user is alive or dead
+
+FINAL BOSS
+Fancy text to say you’ve encountered Uruk-hai
+Set his health to 12
+Display your HP, potions, and Uruk-hai’s HP
+Input for the user to pick to attack, use potion, or save and quit
+If statement for the random chance to hit Uruk-hai
+Else for if you miss, which you will…
+Elif for if you want to drink a potion, or 2, or 3
+Make sure you can’t go over the max HP provided, so you can’t get 40 HP when the max is 20.
+Elif for if the user wants to save and quit
+Else statement in case the user enters an invalid option
+Create Uruk-hai’s hit chance
+If statement for if Uruk-hai hits you
+Else statement if he misses
+Final check to see if the user is alive or dead
+If you’re dead, print you lost
+If you’re alive, then congrats, you’ve won
+Then rerun the startMenu()
+
+
+Define main module:
+Run startMenu()
+
+
+Run main()
